@@ -1,0 +1,11 @@
+
+type Extrinsic @entity {
+
+  id: ID!
+
+  blockHash: String!
+
+  blockHeight: BigInt!
+
+  origin: String
+}
