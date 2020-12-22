@@ -13,9 +13,6 @@ export async function handleBlock(thisBlock: SignedBlock): Promise<void> {
             entity.blockHeight = thisBlock.block.header.number.toBigInt();
             entity.origin = origin;
             await entity.save();
-            const compare = await Extrinsic.get(entity.id);
-            console.log(`compare: ${compare.blockHeight}, entity: ${entity.blockHeight}`);
-            assert(compare.blockHeight === entity.blockHeight, 'test extrinsic.get()')
         }
     }));
 
