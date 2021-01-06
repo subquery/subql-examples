@@ -6,3 +6,4 @@ This repo includes examples that we made to demonstrate how to use subquery.
 | Example                   | Description                                          | Keywords     |
 |---------------------------|------------------------------------------------------|--------------|
 | [extrinsic-finalized-block](extrinsic-finalized-block) | Index extrinsics and so they can be queried by hash. | blockHandler |
+| [block-timestamp](block-timestamp) | Indexes timestamp of each finalized block. | callHandler |
