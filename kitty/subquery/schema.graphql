@@ -1,0 +1,15 @@
+
+type KittyBirthInfo @entity {
+  # KittyId
+  id: ID!
+
+  birthBlockHeight: BigInt!
+
+  owner: String!
+
+  firstOwner: String!
+
+  parent1: String
+
+  parent2: String
+}

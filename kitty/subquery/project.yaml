@@ -1,0 +1,36 @@
+specVersion: "0.0.1"
+description: "This subquery indexes kitty's birth info"
+repository: "https://github.com/onfinality-io/subql-examples"
+
+schema: "./schema.graphql"
+
+endpoint: "wss://localhost:9944"
+
+network:
+  endpoint: "wss://localhost:9944"
+  types: {
+    "KittyIndex": "u32",
+    "Kitty": "[u8; 16]"
+  }
+
+dataSources:
+  - name: runtime
+    kind: substrate/Runtime
+    startBlock: 1
+    mapping:
+      handlers:
+        - handler: handleKittyCreated
+          kind: substrate/EventHandler
+          filter:
+            module: kitty
+            method: KittyCreated
+        - handler: handleKittyBredCall
+          kind: substrate/CallHandler
+          filter:
+            module: kitty
+            method: breed
+        - handler: handleKittyTransferred
+          kind: substrate/EventHandler
+          filter:
+            module: kitty
+            method: KittyTransferred

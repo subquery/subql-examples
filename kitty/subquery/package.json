@@ -1,0 +1,23 @@
+{
+  "name": "block-timestamp",
+  "version": "0.1.0",
+  "description": "This subquery indexes timestamp of each finalized block",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -b",
+    "prepack": "rm -rf dist && npm build",
+    "test": "jest"
+  },
+  "files": [
+    "dist",
+    "schema.graphql",
+    "project.yaml"
+  ],
+  "author": "Ian He",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@polkadot/api": "^3",
+    "@subql/types": "^0.3.0",
+    "typescript": "^4.1.3"
+  }
+}
