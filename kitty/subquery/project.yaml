@@ -4,11 +4,9 @@ repository: "https://github.com/onfinality-io/subql-examples"
 
 schema: "./schema.graphql"
 
-endpoint: "wss://localhost:9944"
-
 network:
-  endpoint: "wss://localhost:9944"
-  types: {
+  endpoint: "ws://localhost:9944"
+  customTypes: {
     "KittyIndex": "u32",
     "Kitty": "[u8; 16]"
   }
@@ -22,15 +20,15 @@ dataSources:
         - handler: handleKittyCreated
           kind: substrate/EventHandler
           filter:
-            module: kitty
+            module: kitties
             method: KittyCreated
-        - handler: handleKittyBredCall
+        - handler: handleKittyBred
           kind: substrate/CallHandler
           filter:
-            module: kitty
+            module: kitties
             method: breed
         - handler: handleKittyTransferred
           kind: substrate/EventHandler
           filter:
-            module: kitty
+            module: kitties
             method: KittyTransferred
