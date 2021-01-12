@@ -1,6 +1,5 @@
 import {SignedBlock} from "@polkadot/types/interfaces";
 import {Extrinsic} from "../types/models/Extrinsic";
-import assert from "assert";
 
 export async function handleBlock(thisBlock: SignedBlock): Promise<void> {
     const blockHash = thisBlock.block.header.hash.toString();
