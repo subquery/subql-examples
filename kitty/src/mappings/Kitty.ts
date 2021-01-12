@@ -11,6 +11,10 @@ export async function handleKittyCreated(event: SubstrateEvent): Promise<void> {
 }
 
 export async function handleKittyBred(extrinsic: SubstrateExtrinsic): Promise<void> {
+    // TODO: won't be necessary when filter support `success` check
+    if (!extrinsic.success) {
+        return;
+    }
     const bredEvent = extrinsic.events.find(e => e.event.section === 'kitties' && e.event.method === 'KittyBred');
     const {event: {data: [owner, kittyId, kitty]}} = bredEvent;
     const record = new KittyBirthInfo(kittyId.toString());

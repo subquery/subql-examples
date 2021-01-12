@@ -1,7 +1,7 @@
 {
-  "name": "block-timestamp",
+  "name": "kitty-birthinfo",
   "version": "0.1.0",
-  "description": "This subquery indexes timestamp of each finalized block",
+  "description": "This subquery indexes birthinfo of kitties",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc -b",
@@ -17,7 +17,7 @@
   "license": "Apache-2.0",
   "devDependencies": {
     "@polkadot/api": "^3",
-    "@subql/types": "^0.3.0",
+    "@subql/types": "^0.4.0",
     "typescript": "^4.1.3"
   }
 }
