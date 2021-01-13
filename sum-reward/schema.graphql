@@ -1,6 +1,6 @@
 type SumReward @entity{
 
-  id: ID!
+  id: ID! # AccountId
 
   accountReward: BigInt!
 

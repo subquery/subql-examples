@@ -13,7 +13,7 @@
     "schema.graphql",
     "project.yaml"
   ],
-  "author": "Ian He",
+  "author": "Jay Ji",
   "license": "Apache-2.0",
   "devDependencies": {
     "@polkadot/api": "^3",
