@@ -7,4 +7,5 @@ This repo includes examples that we made to demonstrate how to use subquery.
 |---------------------------|------------------------------------------------------|--------------|
 | [extrinsic-finalized-block](extrinsic-finalized-block) | Index extrinsics and so they can be queried by hash. | blockHandler |
 | [block-timestamp](block-timestamp) | Indexes timestamp of each finalized block. | callHandler |
+| [sum-reward](sum-reward) | Indexes staking bond, reward and slash from events of finalized block. | eventHandler |
 | [kitty](kitty) | Indexes birthinfo of kitties. | callHandler, eventHandler, customTypes |
