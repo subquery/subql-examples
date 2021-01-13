@@ -1,0 +1,10 @@
+type SumReward @entity{
+
+  id: ID! # AccountId
+
+  accountReward: BigInt!
+
+  accountSlash: BigInt!
+
+  accountTotal: BigInt!
+}
