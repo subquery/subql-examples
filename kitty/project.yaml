@@ -5,7 +5,7 @@ repository: "https://github.com/onfinality-io/subql-examples"
 schema: "./schema.graphql"
 
 network:
-  endpoint: "ws://localhost:9944"
+  endpoint: "ws://host.docker.internal:9944"
   customTypes: {
     "KittyIndex": "u32",
     "Kitty": "[u8; 16]"
