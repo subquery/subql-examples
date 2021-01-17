@@ -1048,10 +1048,10 @@
     js-yaml "^3.14.1"
     reflect-metadata "^0.1.13"
 
-"@subql/types@^0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@subql/types/-/types-0.3.0.tgz#a0fd723fa801c71fe1b086dc06b8e755a19b55cb"
-  integrity sha512-TBPrtjS/W7nEhxnWWS0+pFqH+zzwMYHLNtXZ2MCx8YzDZBFP/RUtTN3zIyI2eXD8ymvPTDcv0iMdTFFU8Lci3Q==
+"@subql/types@^0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@subql/types/-/types-0.4.0.tgz#8f80b662ccbff981b698d8bb72f52c79a7c93dbf"
+  integrity sha512-BFf8xGPeu0bbARDZXipg0AFgCPSXf86J7V0gny0efhXIpnq/7ilQabhk2pFpljDudIDI0z0YMEIsCoY5r4WECA==
 
 "@types/bn.js@^4.11.6":
   version "4.11.6"
@@ -1074,9 +1074,9 @@
     form-data "^3.0.0"
 
 "@types/node@*":
-  version "14.14.20"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.20.tgz#f7974863edd21d1f8a494a73e8e2b3658615c340"
-  integrity sha512-Y93R97Ouif9JEOWPIUyU+eyIdyRqQR0I8Ez1dzku4hDx34NWh4HbtIc3WNzwB1Y9ULvNGeu5B8h8bVL5cAk4/A==
+  version "14.14.21"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.21.tgz#d934aacc22424fe9622ebf6857370c052eae464e"
+  integrity sha512-cHYfKsnwllYhjOzuC5q1VpguABBeecUp24yFluHpn/BQaVxB1CuQ1FSRZCzrPxrkIfWISXV2LbeoBthLWg0+0A==
 
 "@types/ungap__global-this@^0.3.1":
   version "0.3.1"
