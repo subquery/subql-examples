@@ -20,17 +20,16 @@ export async function handleReward(event: SubstrateEvent): Promise<void> {
     const {event: {data: [account, newReward]}} = event;
     const entity = await SumReward.get(account.toString());
 
-    entity.accountReward = BigInt(entity.accountReward) + BigInt((newReward as Balance).toBigInt()) ;
-    entity.accountTotal = BigInt(entity.accountReward) - BigInt(entity.accountSlash);
+    entity.accountReward = entity.accountReward + (newReward as Balance).toBigInt();
+    entity.accountTotal = entity.accountReward - entity.accountSlash;
     await entity.save();
 }
-
 
 export async function handleSlash(event: SubstrateEvent): Promise<void> {
     const {event: {data: [account, newSlash]}} = event;
     const entity = await SumReward.get(account.toString());
 
-    entity.accountSlash = BigInt(entity.accountSlash) + BigInt((newSlash as Balance).toBigInt());
-    entity.accountTotal = BigInt(entity.accountReward) - BigInt(entity.accountSlash);
+    entity.accountSlash = entity.accountSlash + (newSlash as Balance).toBigInt();
+    entity.accountTotal = entity.accountReward - entity.accountSlash;
     await entity.save();
 }
