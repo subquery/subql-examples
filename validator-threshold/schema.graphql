@@ -1,0 +1,19 @@
+
+type ValidatorThreshold @entity {
+  # block height
+  id: ID!
+
+  activeEra: Int
+
+  currentEra: Int
+
+  validatorWithLeastBond: String
+
+  leastStaked: BigInt
+
+  totalStaked: BigInt
+
+  maxNominatorRewardedPerValidator: Int
+
+  totalValidators: Int
+}

@@ -9,3 +9,4 @@ This repo includes examples that we made to demonstrate how to use subquery.
 | [block-timestamp](block-timestamp) | Indexes timestamp of each finalized block. | callHandler |
 | [sum-reward](sum-reward) | Indexes staking bond, reward and slash from events of finalized block. | eventHandler |
 | [kitty](kitty) | Indexes birthinfo of kitties. | callHandler, eventHandler, customTypes |
+| [validator-threshold](validator-threshold) | Indexes the least staking amount required for a validator to be elected. | blockHandler, @polkadot/api |
