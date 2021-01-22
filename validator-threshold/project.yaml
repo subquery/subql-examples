@@ -1,0 +1,16 @@
+specVersion: "0.0.1"
+description: "This subquery indexes bond,reward and slash of each block, summarize total earning of an account"
+repository: "https://github.com/onfinality-io/subql-examples"
+
+schema: "./schema.graphql"
+
+network:
+  endpoint: "wss://rpc.polkadot.io"
+
+dataSources:
+  - name: runtime
+    kind: substrate/Runtime
+    mapping:
+      handlers:
+        - handler: handleBlock
+          kind: substrate/BlockHandler
