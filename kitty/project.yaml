@@ -6,7 +6,7 @@ schema: "./schema.graphql"
 
 network:
   endpoint: "ws://host.docker.internal:9944"
-  customTypes: {
+  types: {
     "KittyIndex": "u32",
     "Kitty": "[u8; 16]"
   }
