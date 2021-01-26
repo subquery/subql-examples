@@ -4,17 +4,13 @@ import {SubstrateEvent, SubstrateExtrinsic} from "@subql/types";
 export async function handleKittyCreated(event: SubstrateEvent): Promise<void> {
     const {event: {data: [owner, kittyId, kitty]}} = event;
     const record = new KittyBirthInfo(kittyId.toString());
-    record.birthBlockHeight = event.extrinsic.block.block.header.number.toBigInt();
+    record.birthBlockHeight = event.block.block.header.number.toBigInt();
     record.firstOwner = owner.toString();
     record.owner = owner.toString();
     await record.save();
 }
 
 export async function handleKittyBred(extrinsic: SubstrateExtrinsic): Promise<void> {
-    // TODO: won't be necessary when filter support `success` check
-    if (!extrinsic.success) {
-        return;
-    }
     const bredEvent = extrinsic.events.find(e => e.event.section === 'kitties' && e.event.method === 'KittyBred');
     const {event: {data: [owner, kittyId, kitty]}} = bredEvent;
     const record = new KittyBirthInfo(kittyId.toString());

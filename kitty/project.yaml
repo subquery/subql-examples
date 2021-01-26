@@ -27,6 +27,7 @@ dataSources:
           filter:
             module: kitties
             method: breed
+            success: true
         - handler: handleKittyTransferred
           kind: substrate/EventHandler
           filter:
