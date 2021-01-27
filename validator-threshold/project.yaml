@@ -5,7 +5,7 @@ repository: "https://github.com/onfinality-io/subql-examples"
 schema: "./schema.graphql"
 
 network:
-  endpoint: "wss://rpc.polkadot.io"
+  endpoint: "wss://polkadot.api.onfinality.me/ws?apikey=54a5d840-d6ff-4967-9eeb-52343c00f41c"
 
 dataSources:
   - name: runtime
