@@ -10,6 +10,7 @@ network:
     "KittyIndex": "u32",
     "Kitty": "[u8; 16]"
   }
+  # also supports: typesAlias, typesBundle, typesChain, typesSpec
 
 dataSources:
   - name: runtime

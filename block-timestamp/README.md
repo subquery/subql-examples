@@ -24,3 +24,7 @@ yarn build
 ```shell
 yarn start:docker
 ```
+
+### 5. query
+open https://www.graphqlbin.com/v2/new
+and use `http://localhost:3000` as endpoint
