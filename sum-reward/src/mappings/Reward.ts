@@ -4,9 +4,8 @@ import {Balance} from '@polkadot/types/interfaces';
 
 export async function handleBond(event: SubstrateEvent): Promise<void> {
     const {event: {data: [account, balance]}} = event;
-    try{
-        await SumReward.get(account.toString());
-    }catch (e) {
+    const entity = await SumReward.get(account.toString());
+    if (entity === undefined){
         const entity = new SumReward(account.toString());
         entity.accountReward = BigInt(0);
         entity.accountSlash = BigInt(0);
