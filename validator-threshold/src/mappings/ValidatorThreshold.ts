@@ -4,6 +4,8 @@ import {SubstrateBlock} from "@subql/types";
 import {ValidatorThreshold} from "../types/models/ValidatorThreshold";
 
 export async function handleBlock(block: SubstrateBlock): Promise<void> {
+    // in the early stage of kusama, staking.activeEra didn't exist
+    if (!api.query.staking.activeEra) return;
     const [activeEra, currentEra] = await api.queryMulti<[Option<ActiveEraInfo>, Option<EraIndex>]>([
         api.query.staking.activeEra,
         api.query.staking.currentEra
