@@ -8,3 +8,10 @@ type SumReward @entity{
 
   accountTotal: BigInt!
 }
+
+# in early stage of kusama, some validators didn't need to bond to start staking
+type NoBondRecordAccount @entity {
+  id: ID! # AccountId
+
+  firstRewardAt: Int!
+}
