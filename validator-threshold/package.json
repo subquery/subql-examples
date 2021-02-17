@@ -1,6 +1,6 @@
 {
   "name": "validator-threshold",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "This subquery indexes the least staking amount required for a validator to be elected.",
   "main": "dist/index.js",
   "scripts": {

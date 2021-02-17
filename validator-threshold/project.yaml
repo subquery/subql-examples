@@ -5,12 +5,16 @@ repository: "https://github.com/onfinality-io/subql-examples"
 schema: "./schema.graphql"
 
 network:
-  endpoint: "wss://rpc.polkadot.io"
+  endpoint: "wss://polkadot.api.onfinality.io/public-ws"
 
 dataSources:
   - name: runtime
     kind: substrate/Runtime
+    # for kusama startBlock: 1445458
     mapping:
       handlers:
         - handler: handleBlock
-          kind: substrate/BlockHandler
+          kind: substrate/EventHandler
+          filter:
+            module: session
+            method: NewSession
