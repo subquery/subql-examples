@@ -1,20 +1,17 @@
 import {ActiveEraInfo, Balance, EraIndex, Exposure } from "@polkadot/types/interfaces";
 import {Option} from "@polkadot/types"
-import {SubstrateBlock} from "@subql/types";
+import {SubstrateEvent} from "@subql/types";
 import {ValidatorThreshold} from "../types/models/ValidatorThreshold";
 
-export async function handleBlock(block: SubstrateBlock): Promise<void> {
+export async function handleBlock({ block }: SubstrateEvent): Promise<void> {
     // in the early stage of kusama, staking.activeEra didn't exist
     if (!api.query.staking.activeEra) return;
-    const [activeEra, currentEra] = await api.queryMulti<[Option<ActiveEraInfo>, Option<EraIndex>]>([
+    const [activeEra] = await api.queryMulti<[Option<ActiveEraInfo>, Option<EraIndex>]>([
         api.query.staking.activeEra,
-        api.query.staking.currentEra
+        // api.query.staking.currentEra
     ]);
-    const entity = new ValidatorThreshold(block.block.header.number.toString());
-    if (activeEra.isEmpty){
-        await entity.save();
-        return;
-    }
+    if (activeEra.isEmpty) return;
+    const entity = new ValidatorThreshold(activeEra.unwrap().index.toString());
     const validators = await api.query.session.validators();
     const exposureInfos = await api.query.staking.erasStakers.multi<Exposure>(validators.map(validator=>[activeEra.unwrap().index, validator]));
     const thresholdValidator = exposureInfos.reduce<{accountId: string, total: Balance}>((acc, exposure, idx)=>{
@@ -23,8 +20,8 @@ export async function handleBlock(block: SubstrateBlock): Promise<void> {
         }
         return acc;
     }, undefined );
-    entity.activeEra = activeEra.unwrap().index.toNumber();
-    entity.currentEra = currentEra.unwrap()?.toNumber();
+    entity.startBlock = block.block.header.number.toNumber();
+    entity.timestamp = block.timestamp;
     entity.totalValidators = validators.length;
     entity.validatorWithLeastBond = thresholdValidator.accountId;
     entity.leastStaked = thresholdValidator.total.toBigInt();

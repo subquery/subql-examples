@@ -1,11 +1,11 @@
 
 type ValidatorThreshold @entity {
-  # block height
+  # era index
   id: ID!
 
-  activeEra: Int
+  startBlock: Int!
 
-  currentEra: Int
+  timestamp: Date!
 
   validatorWithLeastBond: String
 
