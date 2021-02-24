@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "description": "This subquery indexes birthinfo of kitties",
   "main": "dist/index.js",
+  "homepage": "https://github.com/subquery/subql-examples",
+  "repository": "github:subquery/subql-examples",
   "scripts": {
     "build": "tsc -b",
     "prepack": "rm -rf dist && npm build",
@@ -20,6 +22,6 @@
     "@polkadot/api": "^3",
     "@subql/types": "^0.6.0",
     "typescript": "^4.1.3",
-    "@subql/cli": "^0.7.0"
+    "@subql/cli": "^0.7.3"
   }
 }

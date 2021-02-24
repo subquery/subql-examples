@@ -1,6 +1,6 @@
 specVersion: "0.0.1"
 description: "This subquery indexes which block a given extrinsic is finalized in"
-repository: "https://github.com/onfinality-io/subql-examples"
+repository: "https://github.com/subquery/subql-examples"
 
 schema: "./schema.graphql"
 
