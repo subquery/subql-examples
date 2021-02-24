@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "description": "This subquery indexes bond, reward and slash from events of finalized block",
   "main": "dist/index.js",
+  "homepage": "https://github.com/subquery/subql-examples",
+  "repository": "github:subquery/subql-examples",
   "scripts": {
     "build": "tsc -b",
     "prepack": "rm -rf dist && npm build",

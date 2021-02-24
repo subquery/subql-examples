@@ -3,6 +3,8 @@
   "version": "0.2.0",
   "description": "This subquery indexes the least staking amount required for a validator to be elected.",
   "main": "dist/index.js",
+  "homepage": "https://github.com/subquery/subql-examples",
+  "repository": "github:subquery/subql-examples",
   "scripts": {
     "build": "tsc -b",
     "prepack": "rm -rf dist && npm build",
