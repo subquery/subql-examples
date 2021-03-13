@@ -10,7 +10,7 @@ network:
 dataSources:
   - name: runtime
     kind: substrate/Runtime
-    startBlock: 0
+    startBlock: 1
     mapping:
       handlers:
         - handler: handleBond

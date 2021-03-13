@@ -11,6 +11,7 @@ dataSources:
   - name: runtime
     kind: substrate/Runtime
     # for kusama startBlock: 1445458
+    startBlock: 1
     mapping:
       handlers:
         - handler: handleBlock
