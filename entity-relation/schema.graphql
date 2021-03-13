@@ -1,0 +1,34 @@
+type Account @entity {
+
+  id: ID!
+
+  transfers: [Transfer] @derivedFrom(field: "from")
+
+}
+
+type Transfer @entity {
+
+  id: ID!
+
+  amount: BigInt
+
+  to: Account!
+
+  from: Account!
+
+}
+
+type Call @entity {
+
+  id: ID!
+
+  module: String!
+
+  method: String!
+
+  parentCall: Call
+
+  childCalls: [Call] @derivedFrom(field: "parentCall")
+
+}
+

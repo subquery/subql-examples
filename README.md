@@ -10,3 +10,4 @@ This repo includes examples that we made to demonstrate how to use subquery.
 | [sum-reward](sum-reward) | Indexes staking bond, reward and slash from events of finalized block. | eventHandler |
 | [kitty](kitty) | Indexes birthinfo of kitties. | callHandler, eventHandler, customTypes |
 | [validator-threshold](validator-threshold) | Indexes the least staking amount required for a validator to be elected. | blockHandler, @polkadot/api |
+| [entity-relation](entity-relation) | Indexes balance transfers between accounts, also indexes utility batchAll to find out the content of the extrinsic calls | One-to-many, many-to-many relationship |
