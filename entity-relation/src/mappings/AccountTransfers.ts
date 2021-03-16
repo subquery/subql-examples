@@ -4,20 +4,18 @@ import {Transfer} from "../types/models/Transfer";
 import {Balance} from "@polkadot/types/interfaces";
 
 
-function createAccount(accountId: string): Account {
-    const entity = new Account(accountId);
-    return entity;
+async function ensureAccounts(accountIds:string[]): Promise<void> {
+    for (const accountId of accountIds){
+        const account = await Account.get(accountId);
+        if(!account){
+            await new Account(accountId).save();
+        }
+    }
 }
+
 export async function handleTransfer(event: SubstrateEvent): Promise<void> {
     const {event: {data: [from, to, amount]}} = event;
-    const fromAccount = await Account.get(from.toString());
-    if (!fromAccount){
-        await createAccount(from.toString()).save();
-    }
-    const toAccount = await Account.get(to.toString());
-    if(!toAccount){
-        await createAccount(to.toString()).save();
-    }
+    await ensureAccounts([from.toString(),to.toString()]);
     const transferInfo = new Transfer(`${event.block.block.header.number.toNumber()}-${event.idx}`);
     transferInfo.fromId = from.toString();
     transferInfo.toId = to.toString();

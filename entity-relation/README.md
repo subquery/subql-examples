@@ -1,4 +1,4 @@
-# SubQuery Example - Summary of Rewards and Slashes
+# SubQuery Example - Entity relations
 
 This subquery indexes balance transfers between accounts, it is designed to demonstrate the many-to-many relationship within these entities.
  
