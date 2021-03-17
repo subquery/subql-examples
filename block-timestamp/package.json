@@ -8,7 +8,7 @@
   "scripts": {
     "build": "tsc -b",
     "prepack": "rm -rf dist && npm build",
-    "start:docker": "docker-compose up --remove-orphans",
+    "start:docker": "docker-compose pull && docker-compose up --remove-orphans",
     "codegen": "./node_modules/.bin/subql codegen"
   },
   "files": [
