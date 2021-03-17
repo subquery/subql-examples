@@ -25,6 +25,7 @@ services:
       - ./:/app
     command:
       - -f=/app
+      - --local #remove
 
   graphql-engine:
     image: onfinality/subql-query:latest

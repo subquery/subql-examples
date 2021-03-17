@@ -1,10 +1,8 @@
 {
-  "name": "block-timestamp",
-  "version": "0.1.0",
-  "description": "This subquery indexes timestamp of each finalized block",
+  "name": "entity-relation",
+  "version": "1.0.0",
+  "description": "This is an example of using 1-N relations",
   "main": "dist/index.js",
-  "homepage": "https://github.com/subquery/subql-examples",
-  "repository": "github:subquery/subql-examples",
   "scripts": {
     "build": "tsc -b",
     "prepack": "rm -rf dist && npm build",
@@ -16,7 +14,7 @@
     "schema.graphql",
     "project.yaml"
   ],
-  "author": "Ian He",
+  "author": "Jay Ji",
   "license": "Apache-2.0",
   "devDependencies": {
     "@polkadot/api": "^4",

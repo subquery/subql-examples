@@ -8,7 +8,7 @@
   "scripts": {
     "build": "tsc -b",
     "prepack": "rm -rf dist && npm build",
-    "start:docker": "docker-compose up --remove-orphans",
+    "start:docker": "docker-compose pull && docker-compose up --remove-orphans",
     "codegen": "./node_modules/.bin/subql codegen"
   },
   "files": [
@@ -19,9 +19,9 @@
   "author": "Ian He",
   "license": "Apache-2.0",
   "devDependencies": {
-    "@polkadot/api": "^3",
-    "@subql/types": "^0.6.0",
+    "@polkadot/api": "^4",
+    "@subql/types": "^0.6.1",
     "typescript": "^4.1.3",
-    "@subql/cli": "^0.7.3"
+    "@subql/cli": "^0.8.0"
   }
 }

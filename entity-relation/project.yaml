@@ -1,0 +1,23 @@
+specVersion: 0.0.1
+description: This is an example of using 1-N relations
+repository: ''
+schema: ./schema.graphql
+network:
+  endpoint: 'wss://polkadot.api.onfinality.io/public-ws'
+dataSources:
+  - name: main
+    kind: substrate/Runtime
+    startBlock: 1
+    mapping:
+      handlers:
+        - handler: handleCall
+          kind: substrate/CallHandler
+          filter:
+            module: utility
+            method: batchAll
+            success: true
+        - handler: handleTransfer
+          kind: substrate/EventHandler
+          filter:
+            module: balances
+            method: Transfer
