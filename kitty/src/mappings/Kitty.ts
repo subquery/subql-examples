@@ -29,3 +29,12 @@ export async function handleKittyTransferred(event: SubstrateEvent): Promise<voi
     record.owner = to.toString();
     await record.save();
 }
+
+
+export async function kittyApiHandler(event: SubstrateEvent): Promise<void> {
+    const {event: {data: [from, to, kittyId]}} = event;
+    const nextKittyId = await api.query.kitties.nextKittyId();
+    const allKitties  = await api.query.kitties.kitties('xxxxxxxxx',123)
+    const kittyPrice = await api.rpc.kitties.getKittyPrice(nextKittyId);
+    logger.info(`Next kitty id ${kittyId} and price is ${kittyPrice}`)
+}
