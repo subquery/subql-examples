@@ -10,10 +10,15 @@ export default {
             description: 'Get Kitty price',
             params: [
                 {
+                    name: 'at',
+                    type: 'BlockHash',
+                    isHistoric: true,
+                    isOptional: false
+                },
+                {
                     name: 'kittyIndex',
                     type: 'KittyIndex',
-                    isHistoric: "bool",
-                    isOptional: "bool"
+                    isOptional: false
                 }
             ],
             type: 'Balance'

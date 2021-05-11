@@ -18,12 +18,17 @@ network:
             getKittyPrice:{
                 description: string;
                 params: [
-                    {
-                      name: 'kittyIndex',
-                      type: 'KittyIndex',
-                      isHistoric: true,
-                      isOptional: true
-                    }
+                  {
+                    name: 'at',
+                    type: 'BlockHash',
+                    isHistoric: true,
+                    isOptional: false
+                  },
+                  {
+                    name: 'kittyIndex',
+                    type: 'KittyIndex',
+                    isOptional: false
+                  }
                 ];
                 type: "Balance"
             }
