@@ -29,3 +29,15 @@ export async function handleKittyTransferred(event: SubstrateEvent): Promise<voi
     record.owner = to.toString();
     await record.save();
 }
+
+//For demonstration only
+export async function kittyApiHandler(): Promise<void> {
+    //return the KittyIndex type
+    const nextKittyId = await api.query.kitties.nextKittyId();
+    // return the Kitty type, input parameters types are AccountId and KittyIndex
+    const allKitties  = await api.query.kitties.kitties('xxxxxxxxx',123)
+    // return kitty price as Balance type, take BlockHash and KittyIndex for inputs.
+    // This feature is not support yet, wait to complete https://github.com/subquery/subql/issues/302
+    const kittyPrice = await api.rpc.kitties.getKittyPrice(undefined,nextKittyId);
+    logger.info(`Next kitty id ${nextKittyId}`)
+}

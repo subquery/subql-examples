@@ -7,9 +7,15 @@
     "importHelpers": true,
     "resolveJsonModule": true,
     "module": "commonjs",
+    "baseUrl": ".",
     "outDir": "dist",
     "rootDir": "src",
-    "target": "es2017"
+    "target": "es2017",
+    "paths": {
+      "kitty-birthinfo/*": ["src/*"],
+      "@polkadot/api/augment": ["src/interfaces/augment-api.ts"],
+      "@polkadot/types/augment": ["src/interfaces/augment-types.ts"]
+    }
   },
   "include": [
     "src/**/*",

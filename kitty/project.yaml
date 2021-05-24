@@ -8,7 +8,34 @@ network:
   endpoint: "ws://host.docker.internal:9944"
   types: {
     "KittyIndex": "u32",
-    "Kitty": "[u8; 16]"
+    "Kitty": "[u8; 16]",
+  }
+  typesBundle: {
+    spec: {
+      chainname: {
+        rpc: {
+          kitties: {
+            getKittyPrice:{
+                description: string;
+                params: [
+                  {
+                    name: 'at',
+                    type: 'BlockHash',
+                    isHistoric: true,
+                    isOptional: false
+                  },
+                  {
+                    name: 'kittyIndex',
+                    type: 'KittyIndex',
+                    isOptional: false
+                  }
+                ];
+                type: "Balance"
+            }
+          }
+        }
+      }
+    }
   }
 
 dataSources:
