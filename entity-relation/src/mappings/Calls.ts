@@ -2,7 +2,7 @@ import { SubstrateExtrinsic } from '@subql/types';
 import { Call } from '../types/models/Call';
 import { Vec } from '@polkadot/types';
 import { AnyTuple, CallBase } from '@polkadot/types/types';
-import { flatDeep } from './utils/flatten';
+import { flatten } from "lodash"
 
 function extractCalls(
     call: CallBase<AnyTuple>,
@@ -20,10 +20,9 @@ function extractCalls(
     if (call.method == 'batchAll' && call.section == 'utility') {
         const calls = call.args[0] as Vec<CallBase<AnyTuple>>;
         return entities.concat(
-            flatDeep(
-                calls.map((call, idx) => extractCalls(call, idx, callId, false)),
-                1,
-            ),
+            flatten(
+                calls.map((call, idx) => extractCalls(call, idx, callId, false))
+            )
         );
     } else {
         return entities;
