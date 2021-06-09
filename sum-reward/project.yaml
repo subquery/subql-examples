@@ -28,3 +28,13 @@ dataSources:
           filter:
             module: staking
             method: Slash
+        - handler: handleStakingReward
+          kind: substrate/EventHandler
+          filter:
+            module: staking
+            method: Reward
+        - handler: handleStakingSlash
+          kind: substrate/EventHandler
+          filter:
+            module: staking
+            method: Slash
