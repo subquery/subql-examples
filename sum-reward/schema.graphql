@@ -22,7 +22,7 @@ type NoBondRecordAccount @entity {
 
 
 type StakingReward @entity{
-  id: ID!
+  id: ID! #blockHeight-eventIdx
   account: SumReward! @index
   balance: BigInt!
   date: Date!
@@ -30,7 +30,7 @@ type StakingReward @entity{
 
 
 type StakingSlash @entity{
-  id: ID! # AccountId
+  id: ID! #blockHeight-eventIdx
   account: SumReward! @index
   balance: BigInt!
   date: Date!
