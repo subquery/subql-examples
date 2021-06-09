@@ -7,6 +7,10 @@ type SumReward @entity{
   accountSlash: BigInt!
 
   accountTotal: BigInt!
+
+  rewards: [StakingReward] @derivedFrom(field: "account")
+
+  slashs: [StakingSlash] @derivedFrom(field: "account")
 }
 
 # in early stage of kusama, some validators didn't need to bond to start staking
@@ -19,7 +23,7 @@ type NoBondRecordAccount @entity {
 
 type StakingReward @entity{
   id: ID!
-  address: String!
+  account: SumReward! @index
   balance: BigInt!
   date: Date!
 }
@@ -27,7 +31,7 @@ type StakingReward @entity{
 
 type StakingSlash @entity{
   id: ID! # AccountId
-  address: String!
+  account: SumReward! @index
   balance: BigInt!
   date: Date!
 }
