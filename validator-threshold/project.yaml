@@ -6,6 +6,7 @@ schema: "./schema.graphql"
 
 network:
   endpoint: "wss://polkadot.api.onfinality.io/public-ws"
+  dictionary: "https://api.subquery.network/sq/jiqiang90/polkadot-map"
 
 dataSources:
   - name: runtime
