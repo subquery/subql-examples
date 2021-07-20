@@ -1,4 +1,3 @@
-
 type BlockTs @entity {
   # BlockHash
   id: ID!
