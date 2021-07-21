@@ -1,3 +1,7 @@
+# What is SubQuery?
+
+SubQuery powers the next generation of Polkadot dApps by allowing developers to extract, transform and query blockchain data in real time using GraphQL. In addition to this, SubQuery provides production quality hosting infrastructure to run these projects in.
+
 # SubQuery Example - Timestamp of Blocks
 
 This subquery example indexes the timestamp of each finalized block.
@@ -53,15 +57,11 @@ yarn start:docker
 }
 ```
 
-### 5. Expected output
-
-![block_timestamp_example](assets/block_timestamp_example.png)
-
 # Understanding this project
 
-As mentioned above, this project has a function called handleTimestampSet which is defined in the mappings file called BlockTs.ts. It uses a CallHandler which is defined in the manifest file (project.yaml) as "kind: substrate/CallHandler"
+As mentioned above, this project has a function called handleTimestampSet which is defined in the mappings file called BlockTs.ts. It uses a [CallHandler](https://doc.subquery.network/create/mapping.html#call-handler) which is defined in the [manifest file](https://doc.subquery.network/create/manifest.html) (project.yaml) as "kind: substrate/CallHandler"
 
-The schema.graphql file defines the variables blockHeight and timestamp which are both mandatory and of type BigInt and Date respectively.
+The [schema.graphql](https://doc.subquery.network/create/graphql.html) file defines the variables blockHeight and timestamp which are both mandatory and of type BigInt and Date respectively.
 
 If we examine the code in BlockTs.ts in more detail, you can see that the function handleTimestampSet takes one argument of type SubstrateExtrinsic. It then creates a new instance of BlockTs passing in the extrinsic.blockblock.header.hash argument as a string and assigning this to the variable record.
 

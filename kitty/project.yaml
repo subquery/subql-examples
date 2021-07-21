@@ -16,7 +16,7 @@ network:
         rpc: {
           kitties: {
             getKittyPrice:{
-                description: string;
+                description: string,
                 params: [
                   {
                     name: 'at',
@@ -29,8 +29,8 @@ network:
                     type: 'KittyIndex',
                     isOptional: false
                   }
-                ];
-                type: "Balance"
+                ],
+                type: "Balance",
             }
           }
         }
