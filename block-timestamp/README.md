@@ -4,9 +4,7 @@ SubQuery powers the next generation of Polkadot dApps by allowing developers to 
 
 # SubQuery Example - Timestamp of Blocks
 
-This subquery example indexes the timestamp of each finalized block.
-
-It is an example of CallHandler, and by processing the `timestamp.set` extrinsic, and extracting the first args of it, we can retrieve the timestamp.
+This subquery example indexes the timestamp of each finalized block and it is an example of a CallHandler. By processing the `timestamp.set` extrinsic, and extracting the first arguments of it, we can retrieve the timestamp.
 
 # Getting Started
 
