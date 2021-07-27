@@ -1,6 +1,6 @@
 # SubQuery Example - Kitty
 
-This subquery indexes This subquery indexes birthinfo of kitties.
+This subquery indexes birthinfo of kitties.
 
 It demonstrates how to use Subquery to extract data from your dedicated chain.
 
