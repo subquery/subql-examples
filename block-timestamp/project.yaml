@@ -10,7 +10,7 @@ network:
 dataSources:
   - name: runtime
     kind: substrate/Runtime
-    startBlock: 1
+    startBlock: 500000
     mapping:
       handlers:
         - handler: handleTimestampSet
