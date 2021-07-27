@@ -39,7 +39,15 @@ export async function handleReward(event: SubstrateEvent): Promise<void> {
 
 export async function handleSlash(event: SubstrateEvent): Promise<void> {
     const {event: {data: [account, newSlash]}} = event;
-    const entity = await SumReward.get(account.toString());
+    let entity = await SumReward.get(account.toString());
+    if (entity === undefined){
+        // in early stage of kusama, some validators didn't need to bond to start staking
+        // to not break our code, we will create a SumReward record for them and log them in NoBondRecordAccount
+        entity = createSumReward(account.toString());
+        const errorRecord = new NoBondRecordAccount(account.toString());
+        errorRecord.firstRewardAt = event.block.block.header.number.toNumber();
+        await errorRecord.save();
+    }
 
     entity.accountSlash = entity.accountSlash + (newSlash as Balance).toBigInt();
     entity.accountTotal = entity.accountReward - entity.accountSlash;
