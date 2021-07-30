@@ -19,25 +19,41 @@ git clone https://github.com/subquery/subql-examples.git
 
 ```shell
 cd block-timestamp
+# Yarn
 yarn
+
+#NPM
+npm install
 ```
 
 ### 3. Generate types
 
 ```shell
+#Yarn
 yarn codegen
+
+#NPM
+npm run-script codegen
 ```
 
 ### 4. Build the project
 
 ```shell
+#Yarn
 yarn build
+
+#NPM
+npm run-script build
 ```
 
 ### 5. Run locally
 
 ```shell
+#Yarn
 yarn start:docker
+
+#NPM
+npm run start:docker
 ```
 
 ### 5. Example query to run
