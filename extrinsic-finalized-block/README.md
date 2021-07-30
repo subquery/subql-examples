@@ -18,7 +18,7 @@ git clone https://github.com/subquery/subql-examples.git
 ### 2. Install dependencies
 
 ```shell
-cd block-timestamp
+cd extrinsic-finalized-block
 # Yarn
 yarn
 
