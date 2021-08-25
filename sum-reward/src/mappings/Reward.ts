@@ -19,6 +19,9 @@ export async function handleBond(event: SubstrateEvent): Promise<void> {
     }
 }
 
+export async function handleRewarded(event: SubstrateEvent): Promise<void> {
+    await handleReward(event)
+}
 
 export async function handleReward(event: SubstrateEvent): Promise<void> {
     const {event: {data: [account, newReward]}} = event;
@@ -35,6 +38,10 @@ export async function handleReward(event: SubstrateEvent): Promise<void> {
     entity.accountReward = entity.accountReward + (newReward as Balance).toBigInt();
     entity.accountTotal = entity.accountReward - entity.accountSlash;
     await entity.save();
+}
+
+export async function handleSlashed(event: SubstrateEvent): Promise<void> {
+    await handleSlash(event)
 }
 
 export async function handleSlash(event: SubstrateEvent): Promise<void> {
