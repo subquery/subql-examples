@@ -23,18 +23,38 @@ dataSources:
           filter:
             module: staking
             method: Reward
+        - handler: handleRewarded
+          kind: substrate/EventHandler
+          filter:
+            module: staking
+            method: Rewarded
         - handler: handleSlash
           kind: substrate/EventHandler
           filter:
             module: staking
             method: Slash
+        - handler: handleSlashed
+          kind: substrate/EventHandler
+          filter:
+            module: staking
+            method: Slashed
         - handler: handleStakingReward
           kind: substrate/EventHandler
           filter:
             module: staking
             method: Reward
+        - handler: handleStakingRewarded
+          kind: substrate/EventHandler
+          filter:
+            module: staking
+            method: Rewarded
         - handler: handleStakingSlash
           kind: substrate/EventHandler
           filter:
             module: staking
             method: Slash
+        - handler: handleStakingSlashed
+          kind: substrate/EventHandler
+          filter:
+            module: staking
+            method: Slashed
