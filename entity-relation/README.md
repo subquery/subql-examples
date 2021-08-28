@@ -56,7 +56,7 @@ yarn start:docker
 #NPM
 npm run start:docker
 ```
-### 5. Example queries to run
+### 6. Example queries to run
 ```shell
 {
   query{
