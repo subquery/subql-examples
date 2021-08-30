@@ -40,7 +40,7 @@ yarn build
 yarn start:docker
 ```
 
-### 5. Example query to run
+### 6. Example query to run
 
 ```shell
 {
