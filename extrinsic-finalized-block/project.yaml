@@ -1,7 +1,7 @@
 specVersion: "0.2.0"
 name: "Subql-extrinsic-finalized-block"
 version: "0.0.0"
-description: ""
+description: "https://github.com/subquery/subql-examples/blob/main/README.md"
 repository: "https://github.com/subquery/subql-examples"
 schema:
   file: "./schema.graphql"

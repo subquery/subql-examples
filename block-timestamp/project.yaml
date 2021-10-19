@@ -2,7 +2,7 @@ specVersion: "0.2.0"
 
 name: "Subql-block-timestamp"
 version: "0.0.0"
-description: ""
+description: "https://github.com/subquery/subql-examples/blob/main/README.md"
 repository: "https://github.com/subquery/subql-examples"
 
 schema:
@@ -13,7 +13,7 @@ network:
   endpoint: "wss://polkadot.api.onfinality.io/public-ws"
 dataSources:
   - kind: substrate/Runtime
-    startBlock: 1
+    startBlock: 500000
     mapping:
       file: "./dist/index.js"
       handlers:

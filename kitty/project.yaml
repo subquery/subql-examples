@@ -2,7 +2,7 @@ specVersion: "0.2.0"
 
 name: "Subql-kitty"
 version: "0.0.0"
-description: ""
+description: " https://github.com/subquery/subql-examples/blob/main/README.md"
 repository: "https://github.com/subquery/subql-examples"
 
 schema:
@@ -45,7 +45,7 @@ network:
   }
 
 dataSources:
-    - kind: substrate/Runtime
+   - kind: substrate/Runtime
     startBlock: 1
     mapping:
       file: "./dist/index.js"
