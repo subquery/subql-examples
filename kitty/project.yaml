@@ -1,10 +1,16 @@
-specVersion: "0.0.1"
-description: "This subquery indexes kitty's birth info"
+specVersion: "0.2.0"
+
+name: "Subql-kitty"
+version: "0.0.0"
+description: ""
 repository: "https://github.com/subquery/subql-examples"
 
-schema: "./schema.graphql"
+schema:
+  file: "./schema.graphql"
 
 network:
+  genesisHash: '0x91b171bb158e2d3848fa23a9f1c25182fb8e20313b2c1eb49219da7a70ce90c3' # Polkadot
+  # replace this one by user
   endpoint: "ws://host.docker.internal:9944"
   types: {
     "KittyIndex": "u32",
@@ -39,10 +45,10 @@ network:
   }
 
 dataSources:
-  - name: runtime
-    kind: substrate/Runtime
+    - kind: substrate/Runtime
     startBlock: 1
     mapping:
+      file: "./dist/index.js"
       handlers:
         - handler: handleKittyCreated
           kind: substrate/EventHandler
