@@ -1,22 +1,18 @@
-specVersion: "0.0.1"
-description: "This subquery indexes which block a given extrinsic is finalized in"
+specVersion: "0.2.0"
+name: "Subql-extrinsic-finalized-block"
+version: "0.0.0"
+description: "Index extrinsics and so they can be queried by hash."
 repository: "https://github.com/subquery/subql-examples"
-
-schema: "./schema.graphql"
-
+schema:
+  file: "./schema.graphql"
 network:
+  genesisHash: "0x91b171bb158e2d3848fa23a9f1c25182fb8e20313b2c1eb49219da7a70ce90c3"
   endpoint: "wss://polkadot.api.onfinality.io/public-ws"
-
 dataSources:
-  - name: runtime
-    kind: substrate/Runtime
+  - kind: substrate/Runtime
     startBlock: 1
     mapping:
+      file: "./dist/index.js"
       handlers:
         - handler: handleBlock
           kind: substrate/BlockHandler
-
-
-
-
-

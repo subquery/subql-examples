@@ -1,17 +1,21 @@
-specVersion: "0.0.1"
-description: "This subquery indexes bond,reward and slash of each block, summarize total earning of an account"
+specVersion: "0.2.0"
+
+name: "Subql-sum-reward"
+version: "0.0.0"
+description: "Indexes staking bond, reward and slash from events of finalized block."
 repository: "https://github.com/subquery/subql-examples"
 
-schema: "./schema.graphql"
+schema:
+  file: "./schema.graphql"
 
 network:
   endpoint: "wss://polkadot.api.onfinality.io/public-ws"
-
+  genesisHash: "0x91b171bb158e2d3848fa23a9f1c25182fb8e20313b2c1eb49219da7a70ce90c3" # Polkadot
 dataSources:
-  - name: runtime
-    kind: substrate/Runtime
+  - kind: substrate/Runtime
     startBlock: 1
     mapping:
+      file: "./dist/index.js"
       handlers:
         - handler: handleBond
           kind: substrate/EventHandler
