@@ -1,7 +1,7 @@
 specVersion: "0.2.0"
 name: "Subql-extrinsic-finalized-block"
 version: "0.0.0"
-description: "https://github.com/subquery/subql-examples/blob/main/README.md"
+description: "Index extrinsics and so they can be queried by hash."
 repository: "https://github.com/subquery/subql-examples"
 schema:
   file: "./schema.graphql"

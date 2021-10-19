@@ -2,7 +2,7 @@ specVersion: "0.2.0"
 
 name: "Subql-validator-threshold"
 version: "0.0.0"
-description: "https://github.com/subquery/subql-examples/blob/main/README.md"
+description: "Indexes the least staking amount required for a validator to be elected."
 repository: "https://github.com/subquery/subql-examples"
 
 schema:

@@ -2,7 +2,7 @@ specVersion: "0.2.0"
 
 name: "Subql-entityrelation"
 version: "0.0.0"
-description: " https://github.com/subquery/subql-examples/blob/main/README.md"
+description: "Indexes balance transfers between accounts, also indexes utility batchAll to find out the content of the extrinsic calls."
 repository: "https://github.com/subquery/subql-examples"
 
 schema:

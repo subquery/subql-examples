@@ -2,7 +2,7 @@ specVersion: "0.2.0"
 
 name: "Subql-kitty"
 version: "0.0.0"
-description: " https://github.com/subquery/subql-examples/blob/main/README.md"
+description: "Indexes birthinfo of kitties."
 repository: "https://github.com/subquery/subql-examples"
 
 schema:
