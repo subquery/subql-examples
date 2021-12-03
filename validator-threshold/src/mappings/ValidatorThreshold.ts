@@ -1,4 +1,5 @@
 import {ActiveEraInfo, Balance, EraIndex, Exposure } from "@polkadot/types/interfaces";
+import {PalletStakingExposure} from "@polkadot/types/lookup";
 import {Option} from "@polkadot/types"
 import {SubstrateEvent} from "@subql/types";
 import {ValidatorThreshold} from "../types/models/ValidatorThreshold";
@@ -13,7 +14,9 @@ export async function handleBlock({ block }: SubstrateEvent): Promise<void> {
     if (activeEra.isEmpty) return;
     const entity = new ValidatorThreshold(activeEra.unwrap().index.toString());
     const validators = await api.query.session.validators();
-    const exposureInfos = await api.query.staking.erasStakers.multi<Exposure>(validators.map(validator=>[activeEra.unwrap().index, validator]));
+    const exposureInfos = await api.queryMulti<PalletStakingExposure[]>(
+        validators.map(validator=>[api.query.staking.erasStakersClipped, [activeEra.unwrap().index, validator]])
+    );
     const thresholdValidator = exposureInfos.reduce<{accountId: string, total: Balance}>((acc, exposure, idx)=>{
         if (!acc || exposure.total.unwrap().lt(acc.total)) {
             return {accountId: validators[idx].toString(), total: exposure.total.unwrap()};
